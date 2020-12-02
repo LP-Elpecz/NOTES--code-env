@@ -15,6 +15,14 @@ docker load -i ./yolov4.tar
 新建docker应当使用nvidia-docker run 只用docker不分配显卡  
 新建docker容器后要做的事情：  
 1. 验证nvidia及cuda， torch，tf  
+```
+nvidia-smi
+nvcc -V  
+
+python
+import torch
+import tensorflow
+```
 2. apt换源  
 https://blog.csdn.net/qq_21095573/article/details/99736630  
 3. pip及conda换源  
