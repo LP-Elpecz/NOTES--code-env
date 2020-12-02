@@ -1,12 +1,15 @@
 # Docker相关
-新建一个容器 
+新建容器 
 ```
 nvidia-docker run -it -v /home/elpeczmk6/Project/PIXOR:/pixor --name='pixor' be795ae7f606
 ```
-commit一个镜像  
+-it 容器属性设置（待补充） -v 建立宿主机和容器内部文件夹的映射 be79..是镜像ID
+commit镜像  
 ```
 docker commit -a 'Elpecz' -m 'a image of pixor' pixor pixor:torch1_tf1.12_cu9_cv2
 ```
+-a 作者名 -m 描述 名字：tag
+
 导出导入镜像   
 ```
 docker save yolov4 -o ./yolov4.tar
