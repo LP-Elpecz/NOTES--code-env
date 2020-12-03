@@ -90,10 +90,10 @@ max_batches = 2000*class but >6000 >imges’ number
 steps = 80%,90% of max_batches  
 在610，696，783行三个地方修改类别数classes  
 在603，683，776行三个地方修改filters = (classes + 5)x3   
-### tips:    
-标注数据命名对应：1.jpg→1.txt 放在同一目录下  
-数据的命名不能有多个扩展名 如1.jpg.3-1.jpg 只能是 1-3-1.jpg    
-使用docker镜像save load到另一个环境/机器之后，进入darknet文件夹重新配置yolov4:  
+### tips:  
+* 标注数据命名对应：1.jpg→1.txt 放在同一目录下  
+* 数据的命名不能有多个扩展名 如1.jpg.3-1.jpg 只能是 1-3-1.jpg    
+* 使用docker镜像save load到另一个环境/机器之后，进入darknet文件夹重新配置yolov4:  
 ```
 ./build.sh
 ```
