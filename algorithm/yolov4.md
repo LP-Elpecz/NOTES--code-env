@@ -40,7 +40,7 @@ include usr/local/lib
 ```
  vi /etc/bash.bashrc
 ```
-加入两行
+加入两行  
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig  
 export PKG_CONFIG_PATH  
 ```
@@ -68,10 +68,12 @@ source /etc/bash.bashrc
 >valid  = data/test.txt 
 >names = data/obj.names  
 >backup = backup/  
+
 在./data下放置train.txt test.txt,格式如下：
->data/obj/img1.jpg
->data/obj/img2.jpg
->data/obj/img3.jpg
+
+>data/obj/img1.jpg  
+>data/obj/img2.jpg  
+>data/obj/img3.jpg  
 
 将数据集（.jpg only？）和标注文件（.txt）放入./data/obj中，  
 训练命令中 conv.137是预训练参数：https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137， 预训练网络放在根目录下  
