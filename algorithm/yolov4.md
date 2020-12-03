@@ -18,10 +18,8 @@ https://github.com/dm0mb/darknet
  cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_GTK=ON -D OPENCV_GENERATE_PKGCONFIG=YES ..
 ```
 关键在于 GENERATE_PKGCONFIG=YES 否则缺失对依赖文件的路径设置  
-如果需要使用opencv-contrib, 加入如下代码到上面的命令中:
-```
--D OPENCV_EXTRA_MODULES_PATH=/yolov4/opencv-3.4.12/opencv_contrib/modules/
-```
+如果需要使用opencv-contrib, 加入如下代码到上面的命令中:  
+*-D OPENCV_EXTRA_MODULES_PATH=/yolov4/opencv-3.4.12/opencv_contrib/modules/*
 之后make, install
 ```
  make -j8
@@ -61,7 +59,7 @@ export PKG_CONFIG_PATH
 ```
 
 可选参数  
--dont_show -gpus 0,1,2,3  （learning_rate = 0.00261 / GPUs,burn_in = GPUs*1000） -show_img 展示训练图片 -Loss -map 记录loss和val’s map为散点图  
+*-dont_show -gpus 0,1,2,3*   *-show_img* 展示训练图片 *-Loss -map* 记录loss和val’s map为散点图  
 在./data文件夹下建立 obj.names (每一行是一个类别的名称)以及obj.data:  
 classes = 2  
 train  = data/train.txt  
@@ -83,13 +81,15 @@ data/obj/img3.jpg
 ```
  ./darknet detector test data/obj.data yolo-obj.cfg yolo-obj_8000.weights
 ```
-参数设置技巧：  
-图像长宽必须是32的整数倍  
-如果出现OOM，提高subdivisions 到32，64  
-max_batches = 2000*class but >6000 >imges’ number  
-steps = 80%,90% of max_batches  
-在610，696，783行三个地方修改类别数classes  
-在603，683，776行三个地方修改filters = (classes + 5)x3   
+### 参数设置技巧：  
+* 图像长宽必须是32的整数倍  
+* 如果出现OOM，提高subdivisions 到32，64  
+* max_batches = 2000*class but >6000 >imges’ number  
+* steps = 80%,90% of max_batches  
+* 在610，696，783行三个地方修改类别数classes(行号可能有偏差，本文参考官方README，下同)  
+* 在603，683，776行三个地方修改filters = (classes + 5)x3   
+* learning_rate = 0.00261 / GPUs  
+* burn_in = GPUs*1000
 ### tips:  
 * 标注数据命名对应：1.jpg→1.txt 放在同一目录下  
 * 数据的命名不能有多个扩展名 如1.jpg.3-1.jpg 只能是 1-3-1.jpg    
