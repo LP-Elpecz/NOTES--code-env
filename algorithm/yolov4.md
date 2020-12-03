@@ -19,7 +19,7 @@ https://github.com/dm0mb/darknet
 ```
 关键在于 GENERATE_PKGCONFIG=YES 否则缺失对依赖文件的路径设置  
 如果需要使用opencv-contrib, 加入如下代码到上面的命令中:  
-*-D OPENCV_EXTRA_MODULES_PATH=/yolov4/opencv-3.4.12/opencv_contrib/modules/*
+*-D OPENCV_EXTRA_MODULES_PATH=/yolov4/opencv-3.4.12/opencv_contrib/modules/*  
 之后make, install
 ```
  make -j8
@@ -59,7 +59,7 @@ export PKG_CONFIG_PATH
 ```
 
 可选参数  
-*-dont_show -gpus 0,1,2,3*   *-show_img* 展示训练图片 *-Loss -map* 记录loss和val’s map为散点图  
+**-dont_show -gpus 0,1,2,3**   **-show_img** 展示训练图片 **-Loss -map** 记录loss和val’s map为散点图  
 在./data文件夹下建立 obj.names (每一行是一个类别的名称)以及obj.data:  
 classes = 2  
 train  = data/train.txt  
