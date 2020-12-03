@@ -50,11 +50,13 @@ import tensorflow
 https://blog.csdn.net/qq_21095573/article/details/99736630  
 3. pip及conda换源  
 
-Docker 安装，及储存空间管理  
+
+
+## docker 及nvidia docker安装：  
+有官方的最好参考官方指导  
+
+储存空间管理  
 https://www.cnblogs.com/jakaBlog/p/10538382.html
 ```
 docker info
 ```
-
-## docker 及nvidia docker安装：  
-有官方的最好参考官方指导  
