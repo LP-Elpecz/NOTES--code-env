@@ -34,7 +34,7 @@ https://github.com/dm0mb/darknet
  vi etc/ld.so.conf
 ```
 加入一行
-include usr/local/lib
+include usr/local/lib  
 
 打开bash.bashrc
 ```
@@ -42,7 +42,7 @@ include usr/local/lib
  source /etc/bash.bashrc
 ```
 加入两行
-PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig  
 export PKG_CONFIG_PATH
 最后检验：
 ```
