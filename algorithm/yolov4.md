@@ -72,7 +72,7 @@ data/obj/img2.jpg
 data/obj/img3.jpg
 
 将数据集（.jpg only？）和标注文件（.txt）放入./data/obj中，  
-训练命令中 conv.137是预训练参数：https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137，预训练网络放在根目录下  
+训练命令中 conv.137是预训练参数：https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137， 预训练网络放在根目录下  
 继续训练  
 ```
  ./darknet detector train data/obj.data yolo-obj.cfg backup\yolo-obj_2000.weights
