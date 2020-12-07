@@ -85,7 +85,7 @@ source /etc/bash.bashrc
 ```
  ./darknet detector test data/obj.data yolo-obj.cfg yolo-obj_8000.weights
 ```
-### 参数设置技巧：  
+### 参数设置：  
 * 图像长宽必须是32的整数倍  
 * 如果出现OOM，提高subdivisions 到32，64  
 * max_batches = 2000*class but >6000 >imges’ number  
