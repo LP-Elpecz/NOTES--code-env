@@ -1,4 +1,26 @@
 # Docker相关
+## 配置
+### 镜像加速
+'''
+sudo vim /etc/docker/daemon.json
+'''
+这里加入了nvidia-docker的daemon,再加入镜像下载加速，则修改为：
+'''
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+     "registry-mirrors": ["https://cbrok4rc.mirror.aliyuncs.com"]
+}
+'''
+重启docker服务
+'''
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+'''
 ## 容器与镜像管理
 * 查看容器与镜像
 ```
