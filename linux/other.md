@@ -4,7 +4,7 @@
 双系统下，windows的快速开机方式其实是进行了深度睡眠，这样windows关机-开机进入ubuntu会使得windows的硬盘空间变为只读。  
 解决方法：  
 ·  windows下重启代替关机，再进入ubuntu  
-·  关闭windows的快速启动  
+· 或者关闭windows的快速启动  
 cmd下：  
 ```
 powercfg /h off
