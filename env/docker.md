@@ -37,10 +37,11 @@ docker rmi [image_id]
 nvidia-docker run -it --ipc=host -v /home/elpeczmk6/Project/PIXOR:/pixor --name='pixor' be795ae7f606
 ```
 nvidia-docker 也可以换为 --gpus all
--it 容器属性设置（待补充)  
+-it 容器属性设置。 -i: 以交互模式运行容器， -t 为容器重新分配一个伪输入终端  两个命令通常配合使用  
 --ipc=host 设置容器的IPC属性为宿主机  *或者* --shm-size=1G 设置共享内存，这点尤其需要在pytorch环境下设置，因为pyorch使用共享内存来进行进程之间的数据交互，镜像默认的64MBshm并不够用。  
--v 建立宿主机和容器内部文件夹的映射 be79..是镜像ID  
-新建容器应当使用nvidia-docker run 只用docker不分配显卡 
+-v 建立宿主机和容器内部文件夹的映射  
+be79..是镜像ID  
+新建容器应当使用nvidia-docker run 只用docker不分配显卡 *或者*使用--gpus all命令代替 nvidia-docker
 * commit镜像  
 ```
 docker commit -a 'Elpecz' -m 'a image of pixor' pixor pixor:torch1_tf1.12_cu9_cv2
